@@ -2,13 +2,14 @@
 import './App.css';
 
 import styled from 'styled-components';
-
+import waterBackground from "./Ivan_Cajina_Water.jpeg";
 
 function App() {
   return (
     <GridDiv>
      
       <Contact>Contact Me</Contact>
+        <Background/>
         <StyledHeader>
         <h1>Emily Low</h1>
         <h2>Full Stack Software Developer</h2>
@@ -49,7 +50,7 @@ export default App;
 const GridDiv = styled.div`
   display: grid;
   grid-template-columns: [first] 1fr 1fr [midpoint] 1fr  1fr [last];
-  grid-template-rows: 10% 150px 60px 300px 300px auto;
+  grid-template-rows: 8% 200px 60px 300px 300px auto;
   //background-color: grey;
 `;
 
@@ -59,10 +60,21 @@ const Contact = styled.p`
 
 `;
 
+const Background = styled.div`
+  grid-column: 1 / last;
+  grid-row: 2;
+  background-image: url(${waterBackground});
+
+`;
 const StyledHeader = styled.div`
   grid-column: 2 / span 2;
   grid-row: 2 / span 1;
-  //background-color: blue;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
 
 `;
 
