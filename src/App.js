@@ -2,7 +2,10 @@
 import './App.css';
 
 import styled from 'styled-components';
-import waterBackground from "./Ivan_Cajina_Water.jpeg";
+import waterBackground from "./images/Ivan_Cajina_Water.jpeg";
+import checkersImage from "./images/checkers_example.png";
+import conventionImage from "./images/convention_example.png";
+import schedulerImage from "./images/scheduler_example.png";
 
 function App() {
   return (
@@ -17,26 +20,24 @@ function App() {
         <ProjectBorder>
           <h4>My Projects</h4>
         </ProjectBorder>
-        <BigProjectPicture>
-          <a href="https://placeholder.com/"><img src = "https://via.placeholder.com/200x150"/></a>
-        </BigProjectPicture>
+        <BigProjectPicture src = {conventionImage}/>
+          {/* <img src = {conventionImage}/>
+        </BigProjectPicture> */}
         <BigProjectDesc>
           <h5> Convention Scheduler</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper, enim ac finibus efficitur, turpis mi iaculis ligula, non condimentum risus libero nec magna. Donec scelerisque dui in nisi laoreet tincidunt. Ut efficitur </p>
 
         </BigProjectDesc>
 
-        <SmallProjectPicA>
-          <a href="https://placeholder.com/"><img src = "https://via.placeholder.com/150"/></a>
-        </SmallProjectPicA>
+        <SmallProjectPicA src={schedulerImage}/>
+
         <SmallProjectDescA>
           <h5>Flexible Calendar</h5>
           <p>In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </p>
         </SmallProjectDescA>
 
-        <SmallProjectPicB>
-          <a href="https://placeholder.com/"><img src = "https://via.placeholder.com/150"/></a>
-        </SmallProjectPicB>
+        <SmallProjectPicB src={checkersImage}/>
+
         <SmallProjectDescB>
           <h5>Checkers</h5>
           <p>In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </p>
@@ -46,6 +47,9 @@ function App() {
 }
 
 export default App;
+
+
+//Possibly dark blue header bar and borders/boxes? Darker than water image.
 
 const GridDiv = styled.div`
   display: grid;
@@ -83,14 +87,19 @@ const ProjectBorder = styled.div`
 
   grid-column: first / last;
   grid-row: 3;
+  
+  //Note, the bottom border isn't useful when this is the image directly
   border-bottom: 1px solid gray;
 
 `;
 
-const BigProjectPicture = styled.div`
+//const BigProjectPicture = styled.div`
+const BigProjectPicture = styled.img`
   grid-column: first / midpoint;
   grid-row: 4;
   border-bottom: 1px solid grey;
+  max-width: 80%;
+  height: 90%;
 `;
 
 const BigProjectDesc = styled.div`
@@ -101,10 +110,11 @@ const BigProjectDesc = styled.div`
   border-bottom: 1px solid grey;
 `;
 
-const SmallProjectPicA = styled.div`
+const SmallProjectPicA = styled.img`
 
   grid-column: first / 2;
   grid-row: 5;
+  max-width: 80%;
 
 `;
 
@@ -116,9 +126,10 @@ const SmallProjectDescA = styled.div`
   flex-direction: column;
 `;
 
-const SmallProjectPicB = styled.div`
+const SmallProjectPicB = styled.img`
   grid-column: midpoint / 4;
   grid-row: 5;
+  max-width: 80%;
 
 `;
 
