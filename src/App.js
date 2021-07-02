@@ -33,7 +33,7 @@ function App() {
 
         <SmallProjectDescA>
           <h5>Flexible Calendar</h5>
-          <p>In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </p>
+          <p>Put to use in Convention Scheduler. In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </p>
         </SmallProjectDescA>
 
         <SmallProjectPicB src={checkersImage}/>
@@ -54,8 +54,11 @@ export default App;
 const GridDiv = styled.div`
   display: grid;
   grid-template-columns: [first] 1fr 1fr [midpoint] 1fr  1fr [last];
-  grid-template-rows: 8% 200px 60px 300px 300px auto;
+  grid-template-rows: 8% 200px 60px 400px 300px 300px auto;
   //background-color: grey;
+  //place-items: center;
+  //justify-items: center;
+  margin: 20px;
 `;
 
 const Contact = styled.p`
@@ -76,9 +79,7 @@ const StyledHeader = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
+
 
 `;
 
@@ -87,7 +88,7 @@ const ProjectBorder = styled.div`
 
   grid-column: first / last;
   grid-row: 3;
-  
+
   //Note, the bottom border isn't useful when this is the image directly
   border-bottom: 1px solid gray;
 
@@ -95,47 +96,59 @@ const ProjectBorder = styled.div`
 
 //const BigProjectPicture = styled.div`
 const BigProjectPicture = styled.img`
-  grid-column: first / midpoint;
+  grid-column: first / 4;
   grid-row: 4;
-  border-bottom: 1px solid grey;
-  max-width: 80%;
-  height: 90%;
+  //border-bottom: 1px solid grey;
+  max-width: 100%;
+  height: 80%;
+  justify-self: center;
+  align-self: center;
+
 `;
 
 const BigProjectDesc = styled.div`
-  grid-column: midpoint / last;
+  grid-column: 4 / last;
   grid-row: 4
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid grey;
 `;
 
+//So I might want to do a single project box, and then use flexbox for columns. To put the titles on top
+
 const SmallProjectPicA = styled.img`
 
-  grid-column: first / 2;
+  grid-column: first / midpoint;
   grid-row: 5;
-  max-width: 80%;
+  max-width: 100%;
+  justify-self: center;
+  align-self: center;
+
 
 `;
 
 const SmallProjectDescA = styled.div`
-  border-right: 1px solid grey;
-  grid-column: 2 / midpoint;
-  grid-row: 5;
+  //border-right: 1px solid grey;
+  grid-column: first / midpoint;
+  grid-row: 6;
   display: flex;
   flex-direction: column;
 `;
 
 const SmallProjectPicB = styled.img`
-  grid-column: midpoint / 4;
+  grid-column: midpoint / end;
   grid-row: 5;
   max-width: 80%;
+  place-items: center;
+  justify-self: center;
+  align-self: center;
+
 
 `;
 
 const SmallProjectDescB = styled.div`
-  grid-column: 4 / end;
-  grid-row: 5;
+  grid-column: midpoint / end;
+  grid-row: 6;
   display: flex;
   flex-direction: column;
 `;
