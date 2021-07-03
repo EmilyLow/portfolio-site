@@ -18,30 +18,36 @@ function App() {
         <h2>Full Stack Software Developer</h2>
         </StyledHeader>
         <ProjectBorder>
-          <h4>My Projects</h4>
+          <h3>My Projects</h3>
         </ProjectBorder>
         <BigProjectPicture src = {conventionImage}/>
           {/* <img src = {conventionImage}/>
         </BigProjectPicture> */}
         <BigProjectDesc>
-          <h5> Convention Scheduler</h5>
+          <StyledH4> Convention Scheduler</StyledH4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper, enim ac finibus efficitur, turpis mi iaculis ligula, non condimentum risus libero nec magna. Donec scelerisque dui in nisi laoreet tincidunt. Ut efficitur </p>
 
         </BigProjectDesc>
 
-        <SmallProjectPicA src={schedulerImage}/>
+        <TopBorder/>
 
-        <SmallProjectDescA>
-          <h5>Flexible Calendar</h5>
+        <SmallProjectA>
+          <StyledH4>Flexible Calendar</StyledH4>
+          <PicA src={schedulerImage}/>
           <p>Put to use in Convention Scheduler. In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </p>
-        </SmallProjectDescA>
+        </SmallProjectA>
 
-        <SmallProjectPicB src={checkersImage}/>
+        <VerticalBorder/>
 
-        <SmallProjectDescB>
-          <h5>Checkers</h5>
+        <SmallProjectB>
+          <StyledH4>Checkers</StyledH4>
+          <PicB src={checkersImage}/>
           <p>In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </p>
-        </SmallProjectDescB>
+        </SmallProjectB>
+       
+
+     
+
     </GridDiv>
   );
 }
@@ -54,7 +60,7 @@ export default App;
 const GridDiv = styled.div`
   display: grid;
   grid-template-columns: [first] 1fr 1fr [midpoint] 1fr  1fr [last];
-  grid-template-rows: 8% 200px 60px 400px 300px 300px auto;
+  grid-template-rows: 5% 200px 60px 400px 300px 300px auto;
   //background-color: grey;
   //place-items: center;
   //justify-items: center;
@@ -64,6 +70,7 @@ const GridDiv = styled.div`
 const Contact = styled.p`
   grid-column: 4 / span 1;
   grid-row: 1 / span 1;
+  
 
 `;
 
@@ -79,7 +86,13 @@ const StyledHeader = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
+
+`;
+
+const StyledH4 = styled.h4`
+  font-size: 1.6rem;
 
 `;
 
@@ -89,8 +102,27 @@ const ProjectBorder = styled.div`
   grid-column: first / last;
   grid-row: 3;
 
-  //Note, the bottom border isn't useful when this is the image directly
-  border-bottom: 1px solid gray;
+  
+  border-bottom: 2px solid #2d5864;
+ 
+
+`;
+
+const TopBorder = styled.div`
+  grid-column: first / last;
+  grid-row: 5;  
+  border-top: 2px solid #2d5864;
+  
+
+`;
+
+const VerticalBorder = styled.div`
+
+  grid-column: 2 / 3;
+  grid-row: 5 / span 2;
+  border-right: 2px solid #2d5864;
+
+
 
 `;
 
@@ -111,10 +143,46 @@ const BigProjectDesc = styled.div`
   grid-row: 4
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid grey;
+
 `;
 
 //So I might want to do a single project box, and then use flexbox for columns. To put the titles on top
+
+const SmallProjectA = styled.div`
+  margin: 10px;
+
+  grid-column: first / midpoint;
+  grid-row: 5 / span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+
+`;
+
+const SmallProjectB = styled.div`
+  margin: 10px;
+  grid-column: midpoint / end;
+  grid-row: 5 / span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+
+`;
+
+const PicA = styled.img`
+  max-width: 100%;
+
+`;
+
+const PicB = styled.img`
+  max-width: 100%;
+
+
+`;
 
 const SmallProjectPicA = styled.img`
 
