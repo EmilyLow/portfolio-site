@@ -20,31 +20,50 @@ function App() {
         <button>Download Resume</button>
         </StyledHeader>
         <ProjectBorder>
-          <h3>My Projects</h3>
+          <ProjectHeader>My Projects</ProjectHeader>
         </ProjectBorder>
         <BigProjectPicture src = {conventionImage}/>
-          {/* <img src = {conventionImage}/>
-        </BigProjectPicture> */}
+    
         <BigProjectDesc>
           <StyledH4> Convention Scheduler</StyledH4>
+          <a href=''>Visit Site</a>
+          <a href=''>Github</a>
           <StyledP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper, enim ac finibus efficitur, turpis mi iaculis ligula, non condimentum risus libero nec magna. Donec scelerisque dui in nisi laoreet tincidunt. Ut efficitur </StyledP>
-
+          <RectHolder>
+            <Rect>React</Rect>
+            <Rect>Node.js</Rect>
+            <Rect>SQLite</Rect>
+            <Rect>Material-UI</Rect>
+          </RectHolder>
         </BigProjectDesc>
 
         <TopBorder/>
 
         <SmallProjectA>
           <StyledH4>Flexible Calendar</StyledH4>
+          <a href=''>Visit Site</a>
+          <a href=''>Github</a>
           <PicA src={schedulerImage}/>
           <StyledP>Put to use in Convention Scheduler. In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </StyledP>
+          <RectHolder>
+            <Rect>React</Rect>
+            <Rect>Material-UI</Rect>
+            <Rect>Styled-Components</Rect>
+          </RectHolder>
         </SmallProjectA>
 
         <VerticalBorder/>
 
         <SmallProjectB>
           <StyledH4>Checkers</StyledH4>
+      
+          <a href=''>Github</a>
           <PicB src={checkersImage}/>
-          <p>In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </p>
+          <StyledP>In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </StyledP>
+          <RectHolder>
+            <Rect>Java</Rect>
+            
+          </RectHolder>
         </SmallProjectB>
        
 
@@ -62,10 +81,8 @@ export default App;
 const GridDiv = styled.div`
   display: grid;
   grid-template-columns: [first] 1fr 1fr [midpoint] 1fr  1fr [last];
-  grid-template-rows: 5% 200px 60px 400px 300px 300px auto;
-  //background-color: grey;
-  //place-items: center;
-  //justify-items: center;
+  grid-template-rows: 5% 200px 150px 500px 300px 300px auto;
+ 
   margin: 20px;
 `;
 
@@ -82,6 +99,25 @@ const Background = styled.div`
   background-image: url(${waterBackground});
 
 `;
+
+const RectHolder = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  
+`;
+
+const Rect = styled.a`
+  text-decoration: none;
+  color: #2d5864;
+  border: 1px solid #2d5864;
+  padding: 0.5em;
+  margin: 0.3em;
+
+`;
+
+
 const StyledHeader = styled.div`
   grid-column: 2 / span 2;
   grid-row: 2 / span 1;
@@ -89,10 +125,13 @@ const StyledHeader = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  // font-family: ltc-bodoni-175, serif;
-  // font-style: normal;
-  // font-weight: 400;
-  //font-family: 'Roboto Slab', serif;
+  font-family: 'Montserrat', sans-serif;
+
+`;
+
+const ProjectHeader = styled.h3`
+  margin-top: 100px;
+  font-size: 2rem;
   font-family: 'Montserrat', sans-serif;
 
 `;
@@ -103,7 +142,7 @@ const StyledH4 = styled.h4`
 `;
 
 const StyledP = styled.h4`
-  // font-family: calluna, serif;
+  
   font-style: light;
   font-weight: 300; 
 
@@ -115,7 +154,6 @@ const ProjectBorder = styled.div`
 
   grid-column: first / last;
   grid-row: 3;
-
   
   border-bottom: 2px solid #2d5864;
  
@@ -144,7 +182,7 @@ const VerticalBorder = styled.div`
 const BigProjectPicture = styled.img`
   grid-column: first / 4;
   grid-row: 4;
-  //border-bottom: 1px solid grey;
+  
   max-width: 100%;
   height: 80%;
   justify-self: center;
@@ -210,7 +248,7 @@ const SmallProjectPicA = styled.img`
 `;
 
 const SmallProjectDescA = styled.div`
-  //border-right: 1px solid grey;
+
   grid-column: first / midpoint;
   grid-row: 6;
   display: flex;
