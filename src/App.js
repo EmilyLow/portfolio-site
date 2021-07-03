@@ -16,6 +16,8 @@ function App() {
         <StyledHeader>
         <h1>Emily Low</h1>
         <h2>Full Stack Software Developer</h2>
+        {/* Make oval and white and change on hover */}
+        <button>Download Resume</button>
         </StyledHeader>
         <ProjectBorder>
           <h3>My Projects</h3>
@@ -25,7 +27,7 @@ function App() {
         </BigProjectPicture> */}
         <BigProjectDesc>
           <StyledH4> Convention Scheduler</StyledH4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper, enim ac finibus efficitur, turpis mi iaculis ligula, non condimentum risus libero nec magna. Donec scelerisque dui in nisi laoreet tincidunt. Ut efficitur </p>
+          <StyledP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper, enim ac finibus efficitur, turpis mi iaculis ligula, non condimentum risus libero nec magna. Donec scelerisque dui in nisi laoreet tincidunt. Ut efficitur </StyledP>
 
         </BigProjectDesc>
 
@@ -34,7 +36,7 @@ function App() {
         <SmallProjectA>
           <StyledH4>Flexible Calendar</StyledH4>
           <PicA src={schedulerImage}/>
-          <p>Put to use in Convention Scheduler. In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </p>
+          <StyledP>Put to use in Convention Scheduler. In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </StyledP>
         </SmallProjectA>
 
         <VerticalBorder/>
@@ -87,13 +89,25 @@ const StyledHeader = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  // font-family: ltc-bodoni-175, serif;
+  // font-style: normal;
+  // font-weight: 400;
+  //font-family: 'Roboto Slab', serif;
+  font-family: 'Montserrat', sans-serif;
 
 `;
 
 const StyledH4 = styled.h4`
   font-size: 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+`;
 
+const StyledP = styled.h4`
+  // font-family: calluna, serif;
+  font-style: light;
+  font-weight: 300; 
+
+  font-family: 'Open Sans', sans-serif;
 `;
 
 //Items can overlap
