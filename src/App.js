@@ -17,17 +17,21 @@ function App() {
         <h1>Emily Low</h1>
         <h2>Full Stack Software Developer</h2>
         {/* Make oval and white and change on hover */}
-        <button>Download Resume</button>
+        <ResumeButton>Download Resume</ResumeButton>
         </StyledHeader>
         <ProjectBorder>
           <ProjectHeader>My Projects</ProjectHeader>
         </ProjectBorder>
+        
         <BigProjectPicture src = {conventionImage}/>
     
         <BigProjectDesc>
           <StyledH4> Convention Scheduler</StyledH4>
-          <a href=''>Visit Site</a>
-          <a href=''>Github</a>
+          <ButtonHolder>
+            <LinkButton href=''>Visit Site</LinkButton>
+            <LinkButton href=''>Github</LinkButton>
+          </ButtonHolder>
+          
           <StyledP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper, enim ac finibus efficitur, turpis mi iaculis ligula, non condimentum risus libero nec magna. Donec scelerisque dui in nisi laoreet tincidunt. Ut efficitur </StyledP>
           <RectHolder>
             <Rect>React</Rect>
@@ -41,9 +45,14 @@ function App() {
 
         <SmallProjectA>
           <StyledH4>Flexible Calendar</StyledH4>
-          <a href=''>Visit Site</a>
-          <a href=''>Github</a>
-          <PicA src={schedulerImage}/>
+          <ButtonHolder>
+            <LinkButton href=''>Visit Site</LinkButton>
+            <LinkButton href=''>Github</LinkButton>
+          </ButtonHolder>
+          <PicHolder>
+            <PicA src={schedulerImage}/>
+          </PicHolder>
+          
           <StyledP>Put to use in Convention Scheduler. In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </StyledP>
           <RectHolder>
             <Rect>React</Rect>
@@ -56,9 +65,13 @@ function App() {
 
         <SmallProjectB>
           <StyledH4>Checkers</StyledH4>
-      
-          <a href=''>Github</a>
-          <PicB src={checkersImage}/>
+          <ButtonHolder>
+            <LinkButton href=''>Github</LinkButton>
+          </ButtonHolder> 
+          <PicHolder> 
+             <PicB src={checkersImage}/>
+          </PicHolder>
+          
           <StyledP>In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </StyledP>
           <RectHolder>
             <Rect>Java</Rect>
@@ -80,8 +93,9 @@ export default App;
 
 const GridDiv = styled.div`
   display: grid;
-  grid-template-columns: [first] 1fr 1fr [midpoint] 1fr  1fr [last];
-  grid-template-rows: 5% 200px 150px 500px 300px 300px auto;
+
+  grid-template-columns: [first] minmax(150px, 1fr) minmax(150px, 1fr) [midpoint] minmax(150px, 1fr)  minmax(150px, 1fr) [last];
+  grid-template-rows: 50px 230px 150px 550px 300px 300px auto;
  
   margin: 20px;
 `;
@@ -105,6 +119,7 @@ const RectHolder = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
+
   
 `;
 
@@ -117,6 +132,48 @@ const Rect = styled.a`
 
 `;
 
+const ButtonHolder = styled.div`
+  display: flex;
+`;
+
+const LinkButton = styled.a`
+  text-decoration: none;
+  background: #2d5864;
+  color: white;
+  //Set hover
+
+  padding: 0.6em 1em;
+  margin: 1em;
+  border-radius: 30px;
+
+
+  &:hover {
+   opacity: 0.8;
+  }
+`;
+
+const ResumeButton = styled.a`
+  box-sizing: border-box;
+  color: #2d5864;
+  background: white;
+  font-weight: bold;
+  border: 2px solid white;
+  padding: .7em 2em;
+  //border-radius: 60px;
+  border-radius: 50%;
+
+  &:hover {
+    
+    background-color: Transparent;
+   
+    color: white;
+    
+  
+
+   }
+
+
+`;
 
 const StyledHeader = styled.div`
   grid-column: 2 / span 2;
@@ -133,12 +190,14 @@ const ProjectHeader = styled.h3`
   margin-top: 100px;
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif;
-
+ 
 `;
 
 const StyledH4 = styled.h4`
+  margin: 20px 0px;
   font-size: 1.6rem;
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
 `;
 
 const StyledP = styled.h4`
@@ -192,9 +251,12 @@ const BigProjectPicture = styled.img`
 
 const BigProjectDesc = styled.div`
   grid-column: 4 / last;
-  grid-row: 4
+  grid-row: 4;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  
+  margin-left: 10px;
 
 `;
 
@@ -202,12 +264,14 @@ const BigProjectDesc = styled.div`
 
 const SmallProjectA = styled.div`
   margin: 10px;
-
+  //width: 50%;
   grid-column: first / midpoint;
   grid-row: 5 / span 2;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+ 
 
 
 
@@ -215,25 +279,44 @@ const SmallProjectA = styled.div`
 
 const SmallProjectB = styled.div`
   margin: 10px;
+  //width: 50%;
   grid-column: midpoint / end;
   grid-row: 5 / span 2;
   display: flex;
   flex-direction: column;
   align-items: center;
 
+ 
 
 
 `;
 
+//Could try putting images in equal fixed size-divs. Or relative fixed size divs. 
 const PicA = styled.img`
-  max-width: 100%;
-
+   max-width: 100%;
+  //min-height: 300px;
+  //max-height: 450px;
+  max-height: 100%;
 `;
 
 const PicB = styled.img`
-  max-width: 100%;
+   max-width: 100%;
+  //min-height: 300px;
+  // max-height: 450px;
+    max-height: 100%;
 
 
+`;
+
+const PicHolder = styled.div`
+  width: 100%;
+  max-height: 350px;
+ // min-height: 100px;
+  // max-height: 80%;
+  // min-height: 40%;
+  display: flex;
+  justify-content: center;
+  
 `;
 
 const SmallProjectPicA = styled.img`
