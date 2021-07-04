@@ -6,16 +6,26 @@ import waterBackground from "./images/Ivan_Cajina_Water.jpeg";
 import checkersImage from "./images/checkers_example.png";
 import conventionImage from "./images/convention_example.png";
 import schedulerImage from "./images/scheduler_example.png";
+import TestIcon from "./images/align-center.svg";
+
 
 function App() {
   return (
     <GridDiv>
      
-      <Contact>Contact Me</Contact>
+      <ContactBar>
+        <Contact>Contact Me</Contact>
+        <Icon href="https://github.com/EmilyLow/"> <i class="bi bi-envelope" style={{color: "black", fontSize: "1.4rem"}}/></Icon>
+        <Icon href="https://github.com/EmilyLow/"> <i class="bi bi-github" style={{color: "black",fontSize: "1.4rem"}}/></Icon>
+        <Icon href="https://github.com/EmilyLow/"> <i class="bi bi-linkedin" style={{color: "black", fontSize: "1.4rem"}}/></Icon>
+      </ContactBar>
+      
+  
+     
         <Background/>
         <StyledHeader>
-        <h1>Emily Low</h1>
-        <h2>Full Stack Software Developer</h2>
+        <StyledH1>Emily Low</StyledH1>
+        <StyledH2>Full Stack Software Developer</StyledH2>
         {/* Make oval and white and change on hover */}
         <ResumeButton>Download Resume</ResumeButton>
         </StyledHeader>
@@ -95,15 +105,28 @@ const GridDiv = styled.div`
   display: grid;
 
   grid-template-columns: [first] minmax(150px, 1fr) minmax(150px, 1fr) [midpoint] minmax(150px, 1fr)  minmax(150px, 1fr) [last];
-  grid-template-rows: 50px 230px 150px 550px 300px 300px auto;
+  grid-template-rows: 50px 230px 120px 550px 300px 300px auto;
  
   margin: 20px;
 `;
 
-const Contact = styled.p`
+const ContactBar = styled.div`
   grid-column: 4 / span 1;
   grid-row: 1 / span 1;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+const Contact = styled.p`
+  margin: 6px 4px;
   
+
+`;
+
+const Icon = styled.a`
+  margin: 6px 3px;
 
 `;
 
@@ -186,8 +209,21 @@ const StyledHeader = styled.div`
 
 `;
 
+const StyledH1 = styled.h1`
+   font-size: 3.6rem;
+   margin-top: 15px;
+   margin-bottom: 25px;
+
+`;
+
+const StyledH2 = styled.h2`
+   margin-top: 0px;
+
+
+`;
+
 const ProjectHeader = styled.h3`
-  margin-top: 100px;
+  margin-top: 70px;
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif;
  
