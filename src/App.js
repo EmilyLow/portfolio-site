@@ -6,7 +6,7 @@ import waterBackground from "./images/Ivan_Cajina_Water.jpeg";
 import checkersImage from "./images/checkers_example.png";
 import conventionImage from "./images/convention_example.png";
 import schedulerImage from "./images/scheduler_example.png";
-import TestIcon from "./images/align-center.svg";
+
 
 
 function App() {
