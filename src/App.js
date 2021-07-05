@@ -16,9 +16,9 @@ function App() {
      
       <ContactBar>
         <Contact>Contact Me:</Contact>
-        <Icon href="https://github.com/EmilyLow/"> <i class="bi bi-envelope" style={{color: "black", fontSize: "1.4rem"}}/></Icon>
+        <Icon href="mailto:emilymlow00@gmail.com"> <i class="bi bi-envelope" style={{color: "black", fontSize: "1.4rem"}}/></Icon>
         <Icon href="https://github.com/EmilyLow/"> <i class="bi bi-github" style={{color: "black",fontSize: "1.4rem"}}/></Icon>
-        <Icon href="https://github.com/EmilyLow/"> <i class="bi bi-linkedin" style={{color: "black", fontSize: "1.4rem"}}/></Icon>
+        <Icon href="https://www.linkedin.com/in/emily-low-49433a12a/"> <i class="bi bi-linkedin" style={{color: "black", fontSize: "1.4rem"}}/></Icon>
       </ContactBar>
       
   
@@ -40,7 +40,7 @@ function App() {
           <StyledH4> Convention Scheduler</StyledH4>
           <ButtonHolder>
             <LinkButton href=''>Visit Site</LinkButton>
-            <LinkButton href=''>Github</LinkButton>
+            <LinkButton href='https://github.com/EmilyLow/convention-planner'>Github</LinkButton>
           </ButtonHolder>
           
           <StyledP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper, enim ac finibus efficitur, turpis mi iaculis ligula, non condimentum risus libero nec magna. Donec scelerisque dui in nisi laoreet tincidunt. Ut efficitur </StyledP>
@@ -58,7 +58,7 @@ function App() {
           <StyledH4>Flexible Calendar</StyledH4>
           <ButtonHolder>
             <LinkButton href=''>Visit Site</LinkButton>
-            <LinkButton href=''>Github</LinkButton>
+            <LinkButton href='https://github.com/EmilyLow/event-scheduler'>Github</LinkButton>
           </ButtonHolder>
           <PicHolder>
             <PicA src={schedulerImage}/>
@@ -77,7 +77,7 @@ function App() {
         <SmallProjectB>
           <StyledH4>Checkers</StyledH4>
           <ButtonHolder>
-            <LinkButton href=''>Github</LinkButton>
+            <LinkButton href='https://github.com/EmilyLow/Checkers'>Github</LinkButton>
           </ButtonHolder> 
           <PicHolder> 
              <PicB src={checkersImage}/>
