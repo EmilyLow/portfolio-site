@@ -11,10 +11,11 @@ import TestIcon from "./images/align-center.svg";
 
 function App() {
   return (
+  <ParentGrid>
     <GridDiv>
      
       <ContactBar>
-        <Contact>Contact Me</Contact>
+        <Contact>Contact Me:</Contact>
         <Icon href="https://github.com/EmilyLow/"> <i class="bi bi-envelope" style={{color: "black", fontSize: "1.4rem"}}/></Icon>
         <Icon href="https://github.com/EmilyLow/"> <i class="bi bi-github" style={{color: "black",fontSize: "1.4rem"}}/></Icon>
         <Icon href="https://github.com/EmilyLow/"> <i class="bi bi-linkedin" style={{color: "black", fontSize: "1.4rem"}}/></Icon>
@@ -26,7 +27,7 @@ function App() {
         <StyledHeader>
         <StyledH1>Emily Low</StyledH1>
         <StyledH2>Full Stack Software Developer</StyledH2>
-        {/* Make oval and white and change on hover */}
+       
         <ResumeButton>Download Resume</ResumeButton>
         </StyledHeader>
         <ProjectBorder>
@@ -63,7 +64,7 @@ function App() {
             <PicA src={schedulerImage}/>
           </PicHolder>
           
-          <StyledP>Put to use in Convention Scheduler. In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </StyledP>
+          <MarginP>Put to use in Convention Scheduler. In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </MarginP>
           <RectHolder>
             <Rect>React</Rect>
             <Rect>Material-UI</Rect>
@@ -82,7 +83,7 @@ function App() {
              <PicB src={checkersImage}/>
           </PicHolder>
           
-          <StyledP>In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </StyledP>
+          <MarginP>In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </MarginP>
           <RectHolder>
             <Rect>Java</Rect>
             
@@ -93,6 +94,7 @@ function App() {
      
 
     </GridDiv>
+   </ParentGrid>
   );
 }
 
@@ -101,13 +103,31 @@ export default App;
 
 //Possibly dark blue header bar and borders/boxes? Darker than water image.
 
+const ParentGrid = styled.div`
+
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  
+  
+`;
 const GridDiv = styled.div`
   display: grid;
 
   grid-template-columns: [first] minmax(150px, 1fr) minmax(150px, 1fr) [midpoint] minmax(150px, 1fr)  minmax(150px, 1fr) [last];
-  grid-template-rows: 50px 230px 120px 550px 300px 300px auto;
+  grid-template-rows: 50px 230px 120px 550px 300px 410px 100px auto;
  
   margin: 20px;
+
+  // justify-content: center;
+  //Make not true on mobile
+  // width: 90%;
+  // max-width: 1000px;
+
+  width: 90%;
+  max-width: 1200px;
+  
 `;
 
 const ContactBar = styled.div`
@@ -120,13 +140,13 @@ const ContactBar = styled.div`
 `;
 
 const Contact = styled.p`
-  margin: 6px 4px;
+  margin: 6px 12px;
   
 
 `;
 
 const Icon = styled.a`
-  margin: 6px 3px;
+  margin: 6px 6px;
 
 `;
 
@@ -163,12 +183,15 @@ const LinkButton = styled.a`
   text-decoration: none;
   background: #2d5864;
   color: white;
+  text-align: center;
   //Set hover
+  display: inline-flex;
+  align-items: center;
 
   padding: 0.6em 1em;
   margin: 1em;
   border-radius: 30px;
-
+  //min-width: 62px;
 
   &:hover {
    opacity: 0.8;
@@ -242,6 +265,13 @@ const StyledP = styled.h4`
   font-weight: 300; 
 
   font-family: 'Open Sans', sans-serif;
+ 
+`;
+
+const MarginP = styled(StyledP)`
+   margin-left: 25px;
+   margin-right: 25px;
+
 `;
 
 //Items can overlap
@@ -282,7 +312,7 @@ const BigProjectPicture = styled.img`
   height: 80%;
   justify-self: center;
   align-self: center;
-
+  
 `;
 
 const BigProjectDesc = styled.div`
@@ -292,7 +322,7 @@ const BigProjectDesc = styled.div`
   flex-direction: column;
   align-items: center;
   
-  margin-left: 10px;
+  margin-left: 30px;
 
 `;
 
@@ -302,7 +332,7 @@ const SmallProjectA = styled.div`
   margin: 10px;
   //width: 50%;
   grid-column: first / midpoint;
-  grid-row: 5 / span 2;
+  grid-row: 5 / span 3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -317,7 +347,7 @@ const SmallProjectB = styled.div`
   margin: 10px;
   //width: 50%;
   grid-column: midpoint / end;
-  grid-row: 5 / span 2;
+  grid-row: 5 / span 3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -333,6 +363,7 @@ const PicA = styled.img`
   //min-height: 300px;
   //max-height: 450px;
   max-height: 100%;
+
 `;
 
 const PicB = styled.img`
@@ -340,7 +371,7 @@ const PicB = styled.img`
   //min-height: 300px;
   // max-height: 450px;
     max-height: 100%;
-
+    
 
 `;
 
@@ -352,42 +383,8 @@ const PicHolder = styled.div`
   // min-height: 40%;
   display: flex;
   justify-content: center;
-  
+  margin-top: 20px
 `;
 
-const SmallProjectPicA = styled.img`
-
-  grid-column: first / midpoint;
-  grid-row: 5;
-  max-width: 100%;
-  justify-self: center;
-  align-self: center;
 
 
-`;
-
-const SmallProjectDescA = styled.div`
-
-  grid-column: first / midpoint;
-  grid-row: 6;
-  display: flex;
-  flex-direction: column;
-`;
-
-const SmallProjectPicB = styled.img`
-  grid-column: midpoint / end;
-  grid-row: 5;
-  max-width: 80%;
-  place-items: center;
-  justify-self: center;
-  align-self: center;
-
-
-`;
-
-const SmallProjectDescB = styled.div`
-  grid-column: midpoint / end;
-  grid-row: 6;
-  display: flex;
-  flex-direction: column;
-`;
