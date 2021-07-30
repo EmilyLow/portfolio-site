@@ -43,7 +43,7 @@ function App() {
             <LinkButton href='https://github.com/EmilyLow/convention-planner-frontend'>Github</LinkButton>
           </ButtonHolder>
           
-          <StyledP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper, enim ac finibus efficitur, turpis mi iaculis ligula, non condimentum risus libero nec magna. Donec scelerisque dui in nisi laoreet tincidunt. Ut efficitur </StyledP>
+          <StyledP>A convention planning website, that lets users look through all convention events, and add the ones that interest them to a personal calendar. Calendars can be saved by logging in. The website uses a custom calendar component, described in the 'Flexible Calendar' project. </StyledP>
           <RectHolder>
             <Rect>React</Rect>
             <Rect>Node.js</Rect>
@@ -64,7 +64,7 @@ function App() {
             <PicA src={schedulerImage}/>
           </PicHolder>
           
-          <MarginP>Put to use in Convention Scheduler. In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </MarginP>
+          <MarginP>A calendar created from scratch, using javascript Date objects and CSS grid. The calendar automatically arranges added events, and allows the user to set the calendar's time and date ranges.</MarginP>
           <RectHolder>
             <Rect>React</Rect>
             <Rect>Material-UI</Rect>
@@ -83,7 +83,7 @@ function App() {
              <PicB src={checkersImage}/>
           </PicHolder>
           
-          <MarginP>In aliquet, nunc a commodo tempus, libero turpis pharetra libero, ac convallis eros tellus eget sapien. Morbi laoreet scelerisque enim, vestibulum vestibulum elit cursus at. </MarginP>
+          <MarginP>A basic checkers game. The user can play against another person, or against the computer. The computer player uses a minmax algorithm to look ahead three rounds and predict the best move.</MarginP>
           <RectHolder>
             <Rect>Java</Rect>
             
@@ -116,7 +116,7 @@ const GridDiv = styled.div`
   display: grid;
 
   grid-template-columns: [first] minmax(150px, 1fr) minmax(150px, 1fr) [midpoint] minmax(150px, 1fr)  minmax(150px, 1fr) [last];
-  grid-template-rows: 50px 230px 120px [projects] 550px 300px 410px [projects-end] 100px auto;
+  grid-template-rows: 50px 230px 120px [projects] 610px 300px 410px [projects-end] 100px auto;
  
   margin: 10px;
 
@@ -124,8 +124,8 @@ const GridDiv = styled.div`
   width: 90%;
   max-width: 1200px;
 
-  @media (max-width: 768px) {
-    grid-template-rows: 50px 260px 120px [projects]  300px 400px 300px 410px  [projects-end] 100px auto;
+  @media (max-width: 980px) {
+    grid-template-rows: 50px 260px 120px [projects]  350px 400px 300px 410px  [projects-end] 100px auto;
 
 
   }
@@ -175,7 +175,7 @@ const RectHolder = styled.div`
   flex-wrap: wrap;
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 980px) {
    justify-content: center;
   }
   
@@ -319,7 +319,7 @@ const TopBorder = styled.div`
   grid-row: 5;  
   border-top: 2px solid #2d5864;
 
-  @media (max-width: 768px) {
+  @media (max-width: 980px) {
     grid-row: 6 / span 2;
     margin-top: 10px;
 
@@ -348,7 +348,7 @@ const VerticalBorder = styled.div`
   grid-row: 5 / span 2;
   border-right: 2px solid #2d5864;
 
-  @media (max-width: 768px) {
+  @media (max-width: 980px) {
     grid-row: 6 / span 2;
     margin-top: 10px;
 
@@ -361,7 +361,7 @@ const VerticalBorder = styled.div`
 
 `;
 
-//const BigProjectPicture = styled.div`
+
 const BigProjectPicture = styled.img`
   grid-column: first / 4;
   grid-row: 4;
@@ -373,12 +373,21 @@ const BigProjectPicture = styled.img`
 
 
 
-  @media (max-width: 768px) {
+  @media (max-width: 980px) {
+    width: auto;
+    max-height: 100%;
+   
+    grid-column: first / last;
+    grid-row: 5;
+
+  }
+
+  @media (max-width: 980px) {
 
     max-width: 95%;
     height: auto;
-    grid-column: first / last;
-    grid-row: 5;
+
+  }
 
   
   
@@ -394,7 +403,7 @@ const BigProjectDesc = styled.div`
   margin-left: 30px;
 
 
-  @media (max-width: 768px) {
+  @media (max-width: 980px) {
 
     grid-column: first / last;
     grid-row: 4;
@@ -413,7 +422,7 @@ const SmallProjectA = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 980px) {
     grid-row: 6 / span 3;
   }
 
@@ -436,7 +445,7 @@ const SmallProjectB = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 980px) {
     grid-row: 6 / span 3;
 
   }
