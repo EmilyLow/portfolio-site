@@ -40,7 +40,7 @@ function App() {
           <StyledH4> Convention Scheduler</StyledH4>
           <ButtonHolder>
             <LinkButton href='https://dazzling-hugle-6bcc1d.netlify.app'>Visit Site</LinkButton>
-            <LinkButton href='https://github.com/EmilyLow/convention-planner'>Github</LinkButton>
+            <LinkButton href='https://github.com/EmilyLow/convention-planner-frontend'>Github</LinkButton>
           </ButtonHolder>
           
           <StyledP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper, enim ac finibus efficitur, turpis mi iaculis ligula, non condimentum risus libero nec magna. Donec scelerisque dui in nisi laoreet tincidunt. Ut efficitur </StyledP>
@@ -57,8 +57,8 @@ function App() {
         <SmallProjectA>
           <StyledH4>Flexible Calendar</StyledH4>
           <ButtonHolder>
-            <LinkButton href=''>Visit Site</LinkButton>
-            <LinkButton href='https://github.com/EmilyLow/event-scheduler'>Github</LinkButton>
+            <LinkButton href='https://quirky-turing-1d0d2f.netlify.app/'>Visit Site</LinkButton>
+            <LinkButton href='https://github.com/EmilyLow/event-scheduler-frontend'>Github</LinkButton>
           </ButtonHolder>
           <PicHolder>
             <PicA src={schedulerImage}/>
@@ -101,7 +101,7 @@ function App() {
 export default App;
 
 
-//Possibly dark blue header bar and borders/boxes? Darker than water image.
+
 
 const ParentGrid = styled.div`
 
@@ -220,7 +220,7 @@ const ResumeButton = styled.a`
   font-weight: bold;
   border: 2px solid white;
   padding: .7em 2em;
-  //border-radius: 60px;
+ 
   border-radius: 50%;
 
   &:hover {
@@ -393,10 +393,6 @@ const BigProjectDesc = styled.div`
   
   margin-left: 30px;
 
-  // @media (max-width: 768px) { 
-  //   grid-column: midpoint / last;
-  //   height: auto;
-  // }
 
   @media (max-width: 768px) {
 
@@ -433,7 +429,7 @@ const SmallProjectA = styled.div`
 
 const SmallProjectB = styled.div`
   margin: 10px;
-  //width: 50%;
+  
   grid-column: midpoint / end;
   grid-row: 5 / span 3;
   display: flex;
@@ -474,9 +470,7 @@ const PicB = styled.img`
 const PicHolder = styled.div`
   width: 100%;
   max-height: 350px;
- // min-height: 100px;
-  // max-height: 80%;
-  // min-height: 40%;
+
   display: flex;
   justify-content: center;
   margin-top: 20px
