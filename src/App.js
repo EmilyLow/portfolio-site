@@ -6,6 +6,7 @@ import waterBackground from "./images/Ivan_Cajina_Water.jpeg";
 import checkersImage from "./images/checkers_example.png";
 import conventionImage from "./images/convention_example.png";
 import schedulerImage from "./images/scheduler_example.png";
+import resume from "./images/EmilyLow_Resume.pdf";
 
 
 
@@ -28,7 +29,7 @@ function App() {
         <StyledH1>Emily Low</StyledH1>
         <StyledH2>Full Stack Software Developer</StyledH2>
        
-        <ResumeButton>Download Resume</ResumeButton>
+        <ResumeButton href={resume} download>Download Resume</ResumeButton>
         </StyledHeader>
         <ProjectBorder>
           <ProjectHeader>My Projects</ProjectHeader>
@@ -222,6 +223,7 @@ const ResumeButton = styled.a`
   padding: .7em 2em;
  
   border-radius: 50%;
+  text-decoration: none;
 
   &:hover {
     
