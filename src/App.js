@@ -73,7 +73,7 @@ function App() {
         </SmallProjectA>
 
         <VerticalBorder/>
-
+        <SecondBorder/>
         <SmallProjectB>
           <StyledH4>Checkers</StyledH4>
           <ButtonHolder>
@@ -118,18 +118,22 @@ const GridDiv = styled.div`
   grid-template-columns: [first] minmax(150px, 1fr) minmax(150px, 1fr) [midpoint] minmax(150px, 1fr)  minmax(150px, 1fr) [last];
   grid-template-rows: 50px 230px 120px [projects] 550px 300px 410px [projects-end] 100px auto;
  
-  margin: 20px;
+  margin: 10px;
 
-  // justify-content: center;
-  //Make not true on mobile
-  // width: 90%;
-  // max-width: 1000px;
 
   width: 90%;
   max-width: 1200px;
 
+  @media (max-width: 768px) {
+    grid-template-rows: 50px 260px 120px [projects]  300px 400px 300px 410px  [projects-end] 100px auto;
+
+
+  }
+
   @media (max-width: 480px) {
-    grid-template-rows: 50px 230px 120px [projects] 300px 500px 300px 410px [projects-end] 100px auto;
+    
+    grid-template-rows: 50px 250px 120px [projects] 300px 400px 750px 750px [projects-end] 100px auto;
+    width: 100%;
 
   }
   
@@ -145,8 +149,11 @@ const ContactBar = styled.div`
 `;
 
 const Contact = styled.p`
-  margin: 6px 12px;
-  
+  //margin: 6px 12px;
+  margin-right: 12px;
+  margin-bottom: 22px;
+  white-space: nowrap;
+  font-size: 1.2rem;
 
 `;
 
@@ -168,6 +175,9 @@ const RectHolder = styled.div`
   flex-wrap: wrap;
   width: 100%;
 
+  @media (max-width: 768px) {
+   justify-content: center;
+  }
   
 `;
 
@@ -189,14 +199,14 @@ const LinkButton = styled.a`
   background: #2d5864;
   color: white;
   text-align: center;
-  //Set hover
+  
   display: inline-flex;
   align-items: center;
 
   padding: 0.6em 1em;
   margin: 1em;
   border-radius: 30px;
-  //min-width: 62px;
+  
 
   &:hover {
    opacity: 0.8;
@@ -241,12 +251,22 @@ const StyledH1 = styled.h1`
    font-size: 3.6rem;
    margin-top: 15px;
    margin-bottom: 25px;
+   text-align: center;
+
+   @media (max-width: 480px) {
+    font-size: 3rem;
+    margin-bottom: 20px;
+   }
 
 `;
 
 const StyledH2 = styled.h2`
    margin-top: 0px;
+   text-align: center;
 
+   @media (max-width: 480px) {
+      margin-bottom: 25px;
+   }
 
 `;
 
@@ -254,7 +274,10 @@ const ProjectHeader = styled.h3`
   margin-top: 70px;
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif;
- 
+
+  @media (max-width: 480px) {
+    margin-left: 5px;
+ }
 `;
 
 const StyledH4 = styled.h4`
@@ -262,6 +285,7 @@ const StyledH4 = styled.h4`
   font-size: 1.6rem;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
+  
 `;
 
 const StyledP = styled.h4`
@@ -294,9 +318,26 @@ const TopBorder = styled.div`
   grid-column: first / last;
   grid-row: 5;  
   border-top: 2px solid #2d5864;
+
+  @media (max-width: 768px) {
+    grid-row: 6 / span 2;
+    margin-top: 10px;
+
+  }
+  
+  // @media (max-width: 480px) {
+  //   grid-row: 6 / span 2;
+  // }
+
+`;
+
+const SecondBorder = styled.div`
+
   
   @media (max-width: 480px) {
-    grid-row: 6 / span 2;
+    grid-row: 7 / span 2;
+    grid-column: first / last;
+    border-top: 2px solid #2d5864;
   }
 
 `;
@@ -307,9 +348,14 @@ const VerticalBorder = styled.div`
   grid-row: 5 / span 2;
   border-right: 2px solid #2d5864;
 
+  @media (max-width: 768px) {
+    grid-row: 6 / span 2;
+    margin-top: 10px;
+
+  }
 
   @media (max-width: 480px) {
-    grid-row: 6 / span 2;
+    border: none;
   }
 
 
@@ -325,11 +371,16 @@ const BigProjectPicture = styled.img`
   justify-self: center;
   align-self: center;
 
-  @media (max-width: 480px) {
 
+
+  @media (max-width: 768px) {
+
+    max-width: 95%;
+    height: auto;
     grid-column: first / last;
     grid-row: 5;
-  }
+
+  
   
 `;
 
@@ -342,7 +393,12 @@ const BigProjectDesc = styled.div`
   
   margin-left: 30px;
 
-  @media (max-width: 480px) {
+  // @media (max-width: 768px) { 
+  //   grid-column: midpoint / last;
+  //   height: auto;
+  // }
+
+  @media (max-width: 768px) {
 
     grid-column: first / last;
     grid-row: 4;
@@ -361,9 +417,14 @@ const SmallProjectA = styled.div`
   flex-direction: column;
   align-items: center;
 
- 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     grid-row: 6 / span 3;
+  }
+
+
+  @media (max-width: 480px) {
+    grid-column: first / end;
+    grid-row: 6;
   }
 
 
@@ -379,8 +440,14 @@ const SmallProjectB = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     grid-row: 6 / span 3;
+
+  }
+
+  @media (max-width: 480px) {
+    grid-column: first / end;
+    grid-row: 7;
   }
 
 
