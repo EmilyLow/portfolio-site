@@ -116,7 +116,7 @@ const GridDiv = styled.div`
   display: grid;
 
   grid-template-columns: [first] minmax(150px, 1fr) minmax(150px, 1fr) [midpoint] minmax(150px, 1fr)  minmax(150px, 1fr) [last];
-  grid-template-rows: 50px 230px 120px 550px 300px 410px 100px auto;
+  grid-template-rows: 50px 230px 120px [projects] 550px 300px 410px [projects-end] 100px auto;
  
   margin: 20px;
 
@@ -127,6 +127,11 @@ const GridDiv = styled.div`
 
   width: 90%;
   max-width: 1200px;
+
+  @media (max-width: 480px) {
+    grid-template-rows: 50px 230px 120px [projects] 300px 500px 300px 410px [projects-end] 100px auto;
+
+  }
   
 `;
 
@@ -290,6 +295,9 @@ const TopBorder = styled.div`
   grid-row: 5;  
   border-top: 2px solid #2d5864;
   
+  @media (max-width: 480px) {
+    grid-row: 6 / span 2;
+  }
 
 `;
 
@@ -299,6 +307,10 @@ const VerticalBorder = styled.div`
   grid-row: 5 / span 2;
   border-right: 2px solid #2d5864;
 
+
+  @media (max-width: 480px) {
+    grid-row: 6 / span 2;
+  }
 
 
 `;
@@ -312,6 +324,12 @@ const BigProjectPicture = styled.img`
   height: 80%;
   justify-self: center;
   align-self: center;
+
+  @media (max-width: 480px) {
+
+    grid-column: first / last;
+    grid-row: 5;
+  }
   
 `;
 
@@ -323,6 +341,12 @@ const BigProjectDesc = styled.div`
   align-items: center;
   
   margin-left: 30px;
+
+  @media (max-width: 480px) {
+
+    grid-column: first / last;
+    grid-row: 4;
+  }
 
 `;
 
@@ -338,6 +362,9 @@ const SmallProjectA = styled.div`
   align-items: center;
 
  
+  @media (max-width: 480px) {
+    grid-row: 6 / span 3;
+  }
 
 
 
@@ -352,7 +379,9 @@ const SmallProjectB = styled.div`
   flex-direction: column;
   align-items: center;
 
- 
+  @media (max-width: 480px) {
+    grid-row: 6 / span 3;
+  }
 
 
 `;
