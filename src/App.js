@@ -2,11 +2,11 @@
 import './App.css';
 
 import styled from 'styled-components';
-import waterBackground from "./images/Ivan_Cajina_Water.jpeg";
-import checkersImage from "./images/checkers_example.png";
-import conventionImage from "./images/convention_example.png";
-import schedulerImage from "./images/scheduler_example.png";
-import resume from "./images/EmilyLow_Resume.pdf";
+import waterBackground from "./resources/Ivan_Cajina_Water.jpeg";
+import checkersImage from "./resources/checkers_example.png";
+import conventionImage from "./resources/convention_example.png";
+import schedulerImage from "./resources/scheduler_example.png";
+import resume from "./resources/EmilyLow_Resume.pdf";
 
 
 
@@ -29,7 +29,7 @@ function App() {
         <StyledH1>Emily Low</StyledH1>
         <StyledH2>Full Stack Software Developer</StyledH2>
        
-        <ResumeButton href={resume} download>Download Resume</ResumeButton>
+        <ResumeButton href={resume} download>Resume</ResumeButton>
         </StyledHeader>
         <ProjectBorder>
           <ProjectHeader>My Projects</ProjectHeader>
@@ -133,7 +133,7 @@ const GridDiv = styled.div`
 
   @media (max-width: 480px) {
     
-    grid-template-rows: 50px 250px 120px [projects] 300px 400px 750px 750px [projects-end] 100px auto;
+    grid-template-rows: 50px 250px 120px [projects] 300px 420px 750px 750px [projects-end] 100px auto;
     width: 100%;
 
   }
@@ -377,15 +377,15 @@ const BigProjectPicture = styled.img`
 
   @media (max-width: 980px) {
     width: auto;
-    max-height: 100%;
+    height: 100%;
    
     grid-column: first / last;
     grid-row: 5;
 
   }
 
-  @media (max-width: 980px) {
-
+  @media (max-width: 480px) {
+    margin-top: 30px;
     max-width: 95%;
     height: auto;
 
