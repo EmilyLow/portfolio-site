@@ -39,7 +39,7 @@ function App() {
         <BigProjectDesc>
           <StyledH4> Convention Scheduler</StyledH4>
           <ButtonHolder>
-            <LinkButton href=''>Visit Site</LinkButton>
+            <LinkButton href='https://dazzling-hugle-6bcc1d.netlify.app'>Visit Site</LinkButton>
             <LinkButton href='https://github.com/EmilyLow/convention-planner'>Github</LinkButton>
           </ButtonHolder>
           
