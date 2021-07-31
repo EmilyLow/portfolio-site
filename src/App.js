@@ -3,7 +3,7 @@ import './App.css';
 
 import styled from 'styled-components';
 import waterBackground from "./resources/Ivan_Cajina_Water.jpeg";
-import checkersImage from "./resources/checkers_example.png";
+
 import conventionImage from "./resources/convention_example.png";
 import schedulerImage from "./resources/scheduler_example.png";
 import resume from "./resources/EmilyLow_Resume.pdf";
