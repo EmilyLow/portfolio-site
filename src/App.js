@@ -7,6 +7,7 @@ import checkersImage from "./resources/checkers_example.png";
 import conventionImage from "./resources/convention_example.png";
 import schedulerImage from "./resources/scheduler_example.png";
 import resume from "./resources/EmilyLow_Resume.pdf";
+import checkersGIF from "./resources/Checkers_GIF.gif";
 
 
 
@@ -48,7 +49,7 @@ function App() {
           <RectHolder>
             <Rect>React</Rect>
             <Rect>Node.js</Rect>
-            <Rect>SQLite</Rect>
+            <Rect>PostgreSQL</Rect>
             <Rect>Material-UI</Rect>
           </RectHolder>
         </BigProjectDesc>
@@ -66,11 +67,11 @@ function App() {
           </PicHolder>
           
           <MarginP>A calendar created from scratch, using javascript Date objects and CSS grid. The calendar automatically arranges added events, and allows the user to set the calendar's time and date ranges.</MarginP>
-          <RectHolder>
+          <MarginRectHolder>
             <Rect>React</Rect>
             <Rect>Material-UI</Rect>
             <Rect>Styled-Components</Rect>
-          </RectHolder>
+          </MarginRectHolder>
         </SmallProjectA>
 
         <VerticalBorder/>
@@ -81,14 +82,14 @@ function App() {
             <LinkButton href='https://github.com/EmilyLow/Checkers'>Github</LinkButton>
           </ButtonHolder> 
           <PicHolder> 
-             <PicB src={checkersImage}/>
+             <PicB src={checkersGIF}/>
           </PicHolder>
           
           <MarginP>A basic checkers game. The user can play against another person, or against the computer. The computer player uses a minmax algorithm to look ahead three rounds and predict the best move.</MarginP>
-          <RectHolder>
+          <MarginRectHolder>
             <Rect>Java</Rect>
             
-          </RectHolder>
+          </MarginRectHolder>
         </SmallProjectB>
        
 
@@ -125,7 +126,7 @@ const GridDiv = styled.div`
   width: 90%;
   max-width: 1200px;
 
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
     grid-template-rows: 50px 260px 120px [projects]  350px 400px 300px 410px  [projects-end] 100px auto;
 
 
@@ -171,15 +172,26 @@ const Background = styled.div`
 `;
 
 const RectHolder = styled.div`
+
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
 
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
    justify-content: center;
   }
   
+`;
+
+const MarginRectHolder = styled(RectHolder)`
+
+  @media (min-width: 1024px) {
+    margin-left: 50px;
+  }
+   
+ 
+
 `;
 
 const Rect = styled.a`
@@ -291,7 +303,7 @@ const StyledH4 = styled.h4`
 `;
 
 const StyledP = styled.h4`
-  
+
   font-style: light;
   font-weight: 300; 
 
@@ -300,6 +312,7 @@ const StyledP = styled.h4`
 `;
 
 const MarginP = styled(StyledP)`
+
    margin-left: 25px;
    margin-right: 25px;
 
@@ -321,7 +334,7 @@ const TopBorder = styled.div`
   grid-row: 5;  
   border-top: 2px solid #2d5864;
 
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
     grid-row: 6 / span 2;
     margin-top: 10px;
 
@@ -350,7 +363,7 @@ const VerticalBorder = styled.div`
   grid-row: 5 / span 2;
   border-right: 2px solid #2d5864;
 
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
     grid-row: 6 / span 2;
     margin-top: 10px;
 
@@ -375,7 +388,7 @@ const BigProjectPicture = styled.img`
 
 
 
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
     width: auto;
     height: 100%;
    
@@ -405,7 +418,7 @@ const BigProjectDesc = styled.div`
   margin-left: 30px;
 
 
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
 
     grid-column: first / last;
     grid-row: 4;
@@ -417,14 +430,15 @@ const BigProjectDesc = styled.div`
 
 const SmallProjectA = styled.div`
   margin: 10px;
-  //width: 50%;
+
   grid-column: first / midpoint;
   grid-row: 5 / span 3;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 980px) {
+
+  @media (max-width: 1024px) {
     grid-row: 6 / span 3;
   }
 
@@ -447,7 +461,7 @@ const SmallProjectB = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
     grid-row: 6 / span 3;
 
   }
@@ -463,16 +477,12 @@ const SmallProjectB = styled.div`
 //Could try putting images in equal fixed size-divs. Or relative fixed size divs. 
 const PicA = styled.img`
    max-width: 100%;
-  //min-height: 300px;
-  //max-height: 450px;
   max-height: 100%;
 
 `;
 
 const PicB = styled.img`
    max-width: 100%;
-  //min-height: 300px;
-  // max-height: 450px;
     max-height: 100%;
     
 
