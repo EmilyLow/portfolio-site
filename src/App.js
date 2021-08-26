@@ -6,6 +6,7 @@ import waterBackground from "./resources/Ivan_Cajina_Water.jpeg";
 
 import conventionImage from "./resources/convention_example.png";
 import schedulerImage from "./resources/scheduler_example.png";
+import calendarImage from "./resources/calendar_example.png";
 import resume from "./resources/EmilyLow_Resume.pdf";
 import checkersGIF from "./resources/Checkers_GIF.gif";
 
@@ -59,11 +60,11 @@ function App() {
         <SmallProjectA>
           <StyledH4>Flexible Calendar</StyledH4>
           <ButtonHolder>
-            <LinkButton href='https://quirky-turing-1d0d2f.netlify.app/'>Visit Site</LinkButton>
-            <LinkButton href='https://github.com/EmilyLow/event-scheduler-frontend'>Github</LinkButton>
+            <LinkButton href='https://xenodochial-jepsen-167844.netlify.app/'>Visit Site</LinkButton>
+            <LinkButton href='https://github.com/EmilyLow/event-scheduler-browser'>Github</LinkButton>
           </ButtonHolder>
           <PicHolder>
-            <PicA src={schedulerImage}/>
+            <PicA src={calendarImage}/>
           </PicHolder>
           
           <MarginP>A calendar created from scratch, using javascript Date objects and CSS grid. The calendar automatically arranges added events, and allows the user to set the calendar's time and date ranges.</MarginP>
