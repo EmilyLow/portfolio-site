@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import waterBackground from "./resources/Ivan_Cajina_Water.jpeg";
 
 import conventionImage from "./resources/convention_example.png";
-import schedulerImage from "./resources/scheduler_example.png";
 import calendarImage from "./resources/calendar_example.png";
 import resume from "./resources/EmilyLow_Resume.pdf";
 import checkersGIF from "./resources/Checkers_GIF.gif";
